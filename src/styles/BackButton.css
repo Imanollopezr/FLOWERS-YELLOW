@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════════
+   BackButton — Navegación
+   ═══════════════════════════════════════════════ */
+
+.back-button {
+  position: fixed;
+  top: calc(var(--safe-top) + var(--space-md));
+  left: calc(var(--safe-left) + var(--space-md));
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  min-height: 44px; /* Área táctil cómoda */
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-cream-soft);
+  background: transparent;
+  border-radius: 24px;
+  transition: 
+    color var(--duration-fast) var(--ease-gentle),
+    opacity var(--duration-medium) var(--ease-gentle),
+    transform var(--duration-fast) var(--ease-gentle);
+  opacity: 0;
+  animation: fadeInBack 0.8s var(--ease-gentle) 0.5s forwards;
+}
+
+@keyframes fadeInBack {
+  to { opacity: 1; }
+}
+
+.back-button:hover,
+.back-button:focus-visible {
+  color: var(--color-cream);
+  transform: translateX(-2px);
+}
+
+.back-button:active {
+  transform: translateX(-4px);
+  color: var(--color-gold-soft);
+}
+
+.back-button__icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+@media (max-width: 360px) {
+  .back-button {
+    padding: var(--space-sm);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-button {
+    animation: none;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,16 @@
+/* ═══════════════════════════════════════════════
+   App — Main container
+   ═══════════════════════════════════════════════ */
+
+.app {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: var(--color-bg-dark);
+  transition: background-color 2s var(--ease-gentle);
+}
+
+.app--warm {
+  background: var(--color-bg-warm);
+}

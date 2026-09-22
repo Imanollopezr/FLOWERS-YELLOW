@@ -1,0 +1,55 @@
+/* ═══════════════════════════════════════════════
+   FinalMessage — Stage 7
+   ═══════════════════════════════════════════════ */
+
+.final-message {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  padding-bottom: calc(var(--safe-bottom) + var(--space-2xl));
+  background: rgba(10, 10, 20, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  text-align: center;
+  gap: var(--space-lg);
+}
+
+.final-message__dedication {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  font-weight: 600;
+  color: var(--color-cream);
+  line-height: 1.4;
+  opacity: 0;
+}
+
+.final-message__love {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 4vw, 1.3rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-cream-soft);
+  opacity: 0;
+}
+
+.final-message__return {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 3vw, 0.85rem);
+  font-weight: 300;
+  color: var(--color-cream-muted);
+  opacity: 0;
+  margin-top: var(--space-xl);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 380px) {
+  .final-message {
+    padding: var(--space-lg) var(--space-md);
+  }
+}

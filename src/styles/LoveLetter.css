@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════════
+   LoveLetter — Stages 4-5
+   ═══════════════════════════════════════════════ */
+
+.love-letter {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  padding-top: calc(var(--safe-top) + var(--space-xl));
+  padding-bottom: calc(var(--safe-bottom) + var(--space-xl));
+  background: rgba(10, 10, 20, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  overflow-y: auto;
+}
+
+.love-letter__card {
+  max-width: 380px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl); /* increased gap */
+  text-align: center;
+}
+
+/* ── Message (Stage 4) ── */
+.love-letter__message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl); /* separate phrases well */
+}
+
+.love-letter__phrase {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-cream);
+  line-height: 1.8; /* improved line height */
+  opacity: 0;
+  max-width: 90%;
+}
+
+.love-letter__phrase:nth-child(2) {
+  font-size: clamp(0.95rem, 4vw, 1.15rem); /* slightly smaller for hierarchy */
+  color: var(--color-cream-soft);
+}
+
+.love-letter__button {
+  margin-top: var(--space-xl); /* Add extra space above button */
+  padding: var(--space-md) var(--space-xl);
+  min-height: 48px;
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 3.5vw, 1rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--color-cream);
+  background: rgba(212, 168, 67, 0.1);
+  border: 1px solid var(--color-gold-soft);
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: 
+    background var(--duration-fast) var(--ease-gentle),
+    border-color var(--duration-fast) var(--ease-gentle),
+    box-shadow var(--duration-fast) var(--ease-gentle),
+    transform var(--duration-fast) var(--ease-gentle);
+  opacity: 0;
+}
+
+.love-letter__button:hover,
+.love-letter__button:focus-visible {
+  background: rgba(212, 168, 67, 0.18);
+  border-color: var(--color-gold);
+  box-shadow: 0 0 20px rgba(212, 168, 67, 0.15);
+  transform: translateY(-1px);
+}
+
+.love-letter__button:active {
+  transform: translateY(0);
+  background: rgba(212, 168, 67, 0.25);
+}
+
+.love-letter__button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* ── Personal Letter (Stage 5) ── */
+.love-letter__personal {
+  max-width: 360px;
+  width: 100%;
+  padding: var(--space-2xl) var(--space-xl);
+  background: rgba(245, 240, 232, 0.04);
+  border: 1px solid rgba(212, 168, 67, 0.15);
+  border-radius: 12px;
+  text-align: left;
+}
+
+.love-letter__personal-text {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 4vw, 1.15rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-cream);
+  line-height: 2;
+  white-space: pre-line;
+  opacity: 0;
+}
+
+.love-letter__personal-text p {
+  margin-bottom: var(--space-xl);
+}
+
+.love-letter__personal-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 380px) {
+  .love-letter {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .love-letter__personal {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
