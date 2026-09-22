@@ -69,8 +69,8 @@ export default function App() {
       {/* Particles — always visible, intensity increases with stage */}
       <Particles
         warm={isWarm}
-        starCount={stage >= STAGES.FINAL ? 30 : 20}
-        fireflyCount={stage >= STAGES.FINAL ? 25 : stage >= STAGES.GARDEN_GROWING ? 15 : 5}
+        starCount={stage >= STAGES.FINAL ? 15 : 10}
+        fireflyCount={stage >= STAGES.FINAL ? 8 : stage >= STAGES.GARDEN_GROWING ? 5 : 3}
       />
 
       {/* Back Navigation — visible on all screens after welcome */}
